@@ -11,11 +11,13 @@ class App extends Component {
               text={"Open first modal"}
               backgroundColor={"#3A2FAC"}
               onClick={this.function}
+              id = {id}
             />
             <Button
               text={"Open second modal"}
               backgroundColor={"#5F9A13"}
-              onClick={this.gunction}
+              onClick={this.function}
+              id = {id}
             />
           </>
         </header>
