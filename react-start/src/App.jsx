@@ -2,24 +2,29 @@ import React, { Component } from "react";
 import Button from "./components/Button/Button";
 import Modal from "./components/Modal/Modal";
 import "./App.scss";
+import axios from "axios";
 
 class App extends Component {
   state = {
     isFirstModalOpen: false,
-          isSecondModalOpen: false,
+    products: [],
   };
 
+  componentDidMount() {
+    axios.get("/sneakers.json").then((response) => {
+      this.setState({ products: response.data });
+    });
+  }
+
   modalHandler = (e) => {
-    const { isFirstModalOpen, isSecondModalOpen } = this.state;
+    const { isFirstModalOpen } = this.state;
     if (+e.target.dataset.id === 1) {
       this.setState({ isFirstModalOpen: !isFirstModalOpen });
-    } else if (+e.target.dataset.id === 2) {
-      this.setState({ isSecondModalOpen: !isSecondModalOpen });
     }
   };
 
   render() {
-    const { isFirstModalOpen, isSecondModalOpen } = this.state;
+    const { isFirstModalOpen } = this.state;
     const firstModal = (
       <Modal
         header={"Do you want to delete this file?"}
@@ -45,32 +50,7 @@ class App extends Component {
             />
           </>
         }
-      />
-    );
-
-    const secondModal = (
-      <Modal
-        header={"Lorem ipsum, dolor sit amet consectetur adipisicing elit?"}
-        closeButton={true}
-        dataId={2}
-        closeModal={this.modalHandler}
-        text={"Sapiente voluptas eaque molestiae corrupti ut"}
-        actions={
-          <>
-            <Button
-              backgroundColor={"#eee2ea"}
-              text={"Yee, boy"}
-              dataId={2}
-              clickHandler={this.modalHandler}
-            />
-            <Button
-              backgroundColor={"#eee2ea"}
-              text={"No, tnx"}
-              dataId={2}
-              clickHandler={this.modalHandler}
-            />
-          </>
-        }
+        
       />
     );
 
@@ -82,14 +62,7 @@ class App extends Component {
           clickHandler={this.modalHandler}
           dataId={1}
         />
-        <Button
-          backgroundColor={"#617eb3"}
-          text="Open second modal"
-          clickHandler={this.modalHandler}
-          dataId={2}
-        />
         {isFirstModalOpen && firstModal}
-        {isSecondModalOpen && secondModal}
       </div>
     );
   }
