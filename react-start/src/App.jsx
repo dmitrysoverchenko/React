@@ -6,7 +6,7 @@ import "./App.scss";
 class App extends Component {
   state = {
     isFirstModalOpen: false,
-    isSecondModalOpen: false,
+          isSecondModalOpen: false,
   };
 
   modalHandler = (e) => {

@@ -3,7 +3,6 @@ import "./Button.scss";
 
 class Button extends Component {
   render() {
-    
     const { text, backgroundColor, clickHandler, dataId } = this.props;
 
     return (
