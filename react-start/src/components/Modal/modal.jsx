@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import "./modal.scss";
+import PropTypes from "prop-types";
 
 class Modal extends Component {
   render() {
-    const { header, text, actions, closeButton, closeModal, dataId } =
-      this.props;
+    const { header, text, actions, closeModal, closeButton, dataId, cancel } = this.props;
 
     return (
       <div
         className={"substrate"}
         data-id={dataId}
         onClick={(e) => closeModal(e)}
+        data-cancel={cancel}
       >
         <div className={"wrapper"} onClick={(e) => e.preventDefault()}>
           <header className={"header"}>
@@ -20,6 +21,7 @@ class Modal extends Component {
                 className={"close-button"}
                 data-id={dataId}
                 onClick={(e) => closeModal(e)}
+                data-cancel={cancel}
               >
                 X
               </button>
@@ -32,5 +34,15 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  header: PropTypes.string,
+  text: PropTypes.string,
+  dataId: PropTypes.number,
+  closeModal: PropTypes.func,
+  closeButton: PropTypes.func,
+  cancel: PropTypes.bool,
+  actions: PropTypes.element,
+};
 
 export default Modal;
