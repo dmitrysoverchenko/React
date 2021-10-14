@@ -16,7 +16,7 @@ class Modal extends Component {
         <div className={"wrapper"} onClick={(e) => e.preventDefault()}>
           <header className={"header"}>
             <h2 className={"title"}>{header}</h2>
-            {closeButton && (
+            {/* {closeButton && (
               <button
                 className={"close-button"}
                 data-id={dataId}
@@ -25,7 +25,7 @@ class Modal extends Component {
               >
                 X
               </button>
-            )}
+            )} */}
           </header>
           <p className={"text"}>{text}</p>
           <div className={"action-wrapper"}>{actions}</div>

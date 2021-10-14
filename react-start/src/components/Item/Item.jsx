@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Item.scss";
 import PropTypes from "prop-types";
+import Favorite from "../Favorite/Favorite";
 
 class Item extends Component {
   constructor(props) {
@@ -44,12 +45,12 @@ class Item extends Component {
             >
               Добавить в корзину
             </button>
-            <button
-              className={"item__button item-button__fav"}
-              onClick={() => favoriteHandler(id)}
-            >
-              Добавить в избранное
-            </button>
+            <Favorite
+              filled={favorite.includes(id)}
+              className={"favorite"}
+              favoriteHandler={favoriteHandler}
+              id={id}
+            />
           </div>
         </li>
       </>
