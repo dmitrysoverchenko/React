@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import Favorite from "../Favorite/Favorite";
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      favorite: false,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     favorite: false,
+  //   };
+  // }
   render() {
     const {
       title,

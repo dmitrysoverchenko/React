@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 
 class Modal extends Component {
   render() {
-    const { header, text, actions, closeModal, closeButton, dataId, cancel } = this.props;
+    const { header, text, actions, closeModal, closeButton, dataId, cancel } =
+      this.props;
 
     return (
       <div
