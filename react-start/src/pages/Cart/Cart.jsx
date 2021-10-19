@@ -26,7 +26,7 @@ const Cart = ({
         ))}
       </ul>
     ) : (
-      <h3>There are no products in the cart</h3>
+      <h3>Your cart is empty</h3>
     )}
     {isOpenModal && (
       <Modal

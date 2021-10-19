@@ -7,13 +7,13 @@ const Header = () => (
     <nav>
       <div className="nav-wrapper">
         <Link className={["navbar__link logo"]} to="/">
-          nike
+          {"..."}
         </Link>
         <ul className="navbar">
           <li className="navbar__item">
             <Link className="navbar__link" to="/cart">
               Cart
-            </Link> 
+            </Link>
           </li>
           <li className="navbar__item">
             <Link className="navbar__link" to="/favorite">
