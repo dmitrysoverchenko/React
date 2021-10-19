@@ -1,47 +1,32 @@
-import React, { Component } from "react";
-import "./modal.scss";
+import React from "react";
+import classes from "./Modal.module.scss";
 import PropTypes from "prop-types";
 
-class Modal extends Component {
-  render() {
-    const { header, text, actions, closeModal, closeButton, dataId, cancel } =
-      this.props;
-
-    return (
-      <div
-        className={"substrate"}
-        data-id={dataId}
-        onClick={(e) => closeModal(e)}
-        data-cancel={cancel}
-      >
-        <div className={"wrapper"} onClick={(e) => e.preventDefault()}>
-          <header className={"header"}>
-            <h2 className={"title"}>{header}</h2>
-            {/* {closeButton && (
-              <button
-                className={"close-button"}
-                data-id={dataId}
-                onClick={(e) => closeModal(e)}
-                data-cancel={cancel}
-              >
-                X
-              </button>
-            )} */}
-          </header>
-          <p className={"text"}>{text}</p>
-          <div className={"action-wrapper"}>{actions}</div>
-        </div>
-      </div>
-    );
-  }
-}
+const Modal = ({ header, actions, modalHandler, cancel }) => (
+  <div
+    className={classes["substrate"]}
+    onClick={modalHandler}
+    data-cancel={cancel}
+  >
+    <div className={classes["wrapper"]} onClick={(e) => e.preventDefault()}>
+      <header className={classes.header}>
+        <h2 className={classes.title}>{header}</h2>
+        <button
+          className={classes["close-button"]}
+          onClick={modalHandler}
+          data-cancel={cancel}
+        >
+          X
+        </button>
+      </header>
+      <div className={classes["action-wrapper"]}>{actions}</div>
+    </div>
+  </div>
+);
 
 Modal.propTypes = {
   header: PropTypes.string,
-  text: PropTypes.string,
-  dataId: PropTypes.number,
-  closeModal: PropTypes.func,
-  closeButton: PropTypes.func,
+  modalHandler: PropTypes.func,
   cancel: PropTypes.bool,
   actions: PropTypes.element,
 };

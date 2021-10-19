@@ -1,33 +1,36 @@
-.item {
+.card {
   display: flex;
   flex-direction: column;
   flex: 0 0 250px;
   align-items: center;
   padding: 0 10px 15px 10px;
   border-radius: 10px;
+  position: relative;
+  user-select: none;
 }
 
-.item__characters {
+.card__characters {
   padding-top: 10px;
 }
 
-.item__title {
+.card__title {
   font-size: 16px;
   font-weight: 700;
 }
 
-.item__image {
+.card__image {
   object-fit: cover;
   object-position: center 0;
 }
 
-.item__button {
+.card__button {
   border-radius: 10px;
   background-color: #2a88e0;
   color: #fff;
   border: none;
   padding: 10px 30px;
   cursor: pointer;
+  margin-top: 10px;
   transform: translateY(0px);
   transition: transform 0.2s ease-out;
 
@@ -36,8 +39,21 @@
   }
 }
 
-.item__buttons {
-  display: flex;
-  margin-top: 15px;
-  align-items: center;
+.favorite {
+  position: absolute;
+  right: 25px;
+  bottom: 22px;
+  cursor: pointer;
+}
+
+.trash-can {
+  position: absolute;
+  bottom: 22px;
+  left: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #d44637;
+  }
 }
