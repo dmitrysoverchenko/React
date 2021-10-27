@@ -20,7 +20,7 @@ const Cards = () => {
       {
         <ul className="cards-container">
           {cards.map((card) => (
-            <Card key={card.id} card={card} />
+            <Card key={card.id} card={card} buyCan />
           ))}
         </ul>
       }

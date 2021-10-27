@@ -16,7 +16,6 @@ const Card = ({ card, buyCan, trashCan }) => {
       dispatch(actions.addItemToCart(card));
     }
   };
-  // }, [cart, id, card, dispatch];
 
   return (
     <li className="card">

@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Header/Header";
-import "./App.scss";
-import AppRouter from "../AppRouter/AppRouter";
-import Modal from "../Modal/Modal";
+import Header from "./components/Header/Header";
+import "./styles/App.scss";
+import AppRouter from "./components/AppRouter/AppRouter";
+import Modal from "./components/Modal/Modal";
 import { useSelector } from "react-redux";
 
 const App = () => {

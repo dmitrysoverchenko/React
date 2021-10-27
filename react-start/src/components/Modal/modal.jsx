@@ -23,8 +23,8 @@ const Modal = ({ header }) => {
           </button>
         </header>
         <div className="action-wrapper">
-          <Button backgroundColor={"#2a88e0"} text={"Ok"} confirm={true} />
-          <Button backgroundColor={"#2a88e0"} text={"Cancel"} />
+          <Button backgroundColor="#2a88e0" text={"Ok"} confirm={true} />
+          <Button backgroundColor="#2a88e0" text={"Cancel"} />
         </div>
       </div>
     </div>

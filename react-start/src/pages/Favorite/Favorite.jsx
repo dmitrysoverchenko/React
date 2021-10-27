@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/Card/Card";
 import { useSelector } from "react-redux";
+import Subtitle from "../../components/Subtitle/Subtitle";
 
 const Favorite = () => {
   const { favorite } = useSelector((state) => state.favorite);
@@ -14,7 +15,7 @@ const Favorite = () => {
           ))}
         </ul>
       ) : (
-        <h3>Your favorites list is empty</h3>
+        <Subtitle text={"Your favorites list is empty"} />
       )}
     </>
   );
