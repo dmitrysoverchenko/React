@@ -1,26 +1,23 @@
-import React from 'react';
+import React from "react";
 import Card from "../../components/Card/Card";
+import { useSelector } from "react-redux";
 
-
-const Favorite = ({ favorite, favoriteHandler, cartHandler}) => {
+const Favorite = () => {
+  const { favorite } = useSelector((state) => state.favorite);
 
   return (
-      <>
-        {favorite.length
-            ? <ul className="cards-container">
-              {favorite.map(card => <Card key={card.id}
-                                          card={card}
-                                          favorite={favorite}
-                                          modalHandler={cartHandler}
-                                          favoriteHandler={favoriteHandler}
-                                          addToCart={true}
-              />)
-              }
-            </ul>
-            : <h3>Your favorite list are empty</h3>
-        }
-      </>
+    <>
+      {favorite.length ? (
+        <ul className={"cards-container"}>
+          {favorite.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
+        </ul>
+      ) : (
+        <h3>Your favorites list is empty</h3>
+      )}
+    </>
   );
-}
+};
 
 export default Favorite;

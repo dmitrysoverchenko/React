@@ -11,7 +11,7 @@ const Icon = ({ type, color, filled, className, card }) => {
 
   return (
     <>
-      {start && (
+      {star && (
         <div
           className={`icon icon--${type} ${className}`}
           onClick={() => dispatch(actions.setFavorite(card))}

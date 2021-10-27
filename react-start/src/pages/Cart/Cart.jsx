@@ -1,56 +1,23 @@
 import React from "react";
 import Card from "../../components/Card/Card";
-import Modal from "../../components/Modal/Modal";
-import Button from "../../components/Button/Button";
+import { useSelector } from "react-redux";
 
-const Cart = ({
-  closeModal,
-  isOpenModal,
-  cart,
-  favorite,
-  favoriteHandler,
-  cartHandler,
-}) => (
-  <>
-    {cart.length ? (
-      <ul className="cards-container">
-        {cart.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            favorite={favorite}
-            favoriteHandler={favoriteHandler}
-            modalHandler={cartHandler}
-            trashCan={true}
-          />
-        ))}
-      </ul>
-    ) : (
-      <h3>Your cart is empty</h3>
-    )}
-    {isOpenModal && (
-      <Modal
-        modalHandler={closeModal}
-        cancel={true}
-        header={"Are you sure to delete it?"}
-        actions={
-          <>
-            <Button
-              backgroundColor={"#2a88e0"}
-              text={"Ok"}
-              clickHandler={closeModal}
-            />
-            <Button
-              backgroundColor={"#2a88e0"}
-              text={"Cancel"}
-              clickHandler={closeModal}
-              cancel={true}
-            />
-          </>
-        }
-      />
-    )}
-  </>
-);
+const Cart = () => {
+  const { cart } = useSelector((state) => state.cart);
+
+  return (
+    <>
+      {cart.length ? (
+        <ul className={"cards-container"}>
+          {cart.map((card) => (
+            <Card key={card.id} card={card} trashCan={true} buyCan={false} />
+          ))}
+        </ul>
+      ) : (
+        <h3>Your cart is empty</h3>
+      )}
+    </>
+  );
+};
 
 export default Cart;

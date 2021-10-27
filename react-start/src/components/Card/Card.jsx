@@ -5,17 +5,18 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../redux/actions";
 
-const Card = ({ card, trashCan }) => {
-  const { title, price, color, img, code, id } = card;
+const Card = ({ card, buyCan, trashCan }) => {
+  const { title, price, color, imgUrl, id } = card;
   const { favorite } = useSelector((state) => state.favorite);
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const addToCartHandler = useCallback(() => {
+  const addToCartHandler = () => {
     if (!cart.find((e) => e.id === id)) {
       dispatch(actions.addItemToCart(card));
     }
-  }, [cart, id, card, dispatch]);
+  };
+  // }, [cart, id, card, dispatch];
 
   return (
     <li className="card">
@@ -32,7 +33,7 @@ const Card = ({ card, trashCan }) => {
         <li>color: {color}</li>
         <li>price: {price}</li>
       </ul>
-      {addToCart && (
+      {buyCan && (
         <button
           className={"card__button"}
           data-add={true}
@@ -41,11 +42,9 @@ const Card = ({ card, trashCan }) => {
           Add to cart
         </button>
       )}
-
       <Icon
         filled={favorite.map((e) => e.id).includes(id)}
         className={"favorite"}
-        favoriteHandler={favoriteHandler}
         card={card}
       />
       {trashCan && (
