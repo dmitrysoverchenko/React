@@ -1,31 +1,26 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import Card from "../../components/Card/Card";
 import "./Cards.scss";
-import { saveToLocalStorage } from "../../localStorage/saveToLocalStorage";
+import { useDispatch, useSelector } from "react-redux";
+import operations from "../../redux/operations";
+import actions from "../../redux/actions";
 
-const Cards = ({ setCards, cards, cartHandler, favorite, favoriteHandler }) => {
+const Cards = () => {
+  const dispatch = useDispatch();
+  const { cards } = useSelector((state) => state.app);
 
   useEffect(() => {
-    axios.get("sneakers.json").then((response) => {
-      setCards(response.data);
-      saveToLocalStorage("cards", response.data);
-    });
-  }, [setCards]);
+    cards.length === 0
+      ? dispatch(operations.fetchCards())
+      : dispatch(actions.setLoader(false));
+  }, [cards, dispatch]);
 
   return (
     <>
       {
         <ul className="cards-container">
           {cards.map((card) => (
-            <Card
-              key={card.id}
-              card={card}
-              favorite={favorite}
-              modalHandler={cartHandler}
-              favoriteHandler={favoriteHandler}
-              addToCart={true}
-            />
+            <Card key={card.id} card={card} />
           ))}
         </ul>
       }

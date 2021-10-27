@@ -1,27 +1,32 @@
-import React from 'react';
-import './Button.scss';
-import PropTypes from 'prop-types';
+import React from "react";
+import "./Button.scss";
+import PropTypes from "prop-types";
+import actions from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
-const Button = ({text, backgroundColor, clickHandler, cancel}) => (
+const Button = ({ text, backgroundColor, confirm }) => {
+  const dispatch = useDispatch();
+
+  return (
     <button
-        style={{backgroundColor}}
-        onClick={clickHandler}
-        className={"button"}
-        data-cancel={cancel}
+      style={{ backgroundColor }}
+      onClick={() => dispatch(actions.closeModal(confirm))}
+      className={"button"}
     >
       {text}
     </button>
-);
+  );
+};
 
 Button.propTypes = {
   text: PropTypes.string,
   backgroundColor: PropTypes.string,
   clickHandler: PropTypes.func,
-  cancel: PropTypes.bool
-}
+  cancel: PropTypes.bool,
+};
 
 Button.defaultProp = {
-  cancel: false
-}
+  cancel: false,
+};
 
 export default Button;
