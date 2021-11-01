@@ -45,15 +45,3 @@
   bottom: 22px;
   cursor: pointer;
 }
-
-.trash-can {
-  position: absolute;
-  bottom: 22px;
-  left: 25px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #d44637;
-  }
-}
