@@ -32,7 +32,7 @@ const CheckoutForm = () => {
           name={"lastName"}
           type="text"
           label={"Last name"}
-          placeholder={"Enter your second name"}
+          placeholder={"Enter your last name"}
         />
         <CheckoutField
           name={"age"}
@@ -44,7 +44,7 @@ const CheckoutForm = () => {
           name={"address"}
           type="text"
           label={"Address"}
-          placeholder={"Shipment address"}
+          placeholder={"Shipping address"}
         />
         <CheckoutField
           name={"mobile"}
