@@ -17,7 +17,7 @@ const schema = Yup.object().shape({
   mobile: Yup.string().required("This field can not be empty"),
 });
 
-const FormOrder = () => {
+const CheckoutForm = () => {
   return (
     <div className={"form-wrapper"}>
       <h3 className={"form-title"}>Checkout form</h3>
@@ -71,10 +71,11 @@ const checkoutFormWithFormik = withFormik({
   validationSchema: schema,
   handleSubmit: (values, formik) => {
     const { dispatch } = formik.props;
+    console.log(localStorage.getItem("cart"));
     console.log(values);
     clearLocalStorage("cart");
     dispatch(actions.clearCart());
   },
-})(FormOrder);
+})(CheckoutForm);
 
 export default connect()(checkoutFormWithFormik);
