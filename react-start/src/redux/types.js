@@ -9,6 +9,7 @@ const ADD_TO_CART = "ADD_TO_CART";
 const CLEAR_CART = "CLEAR_CART";
 
 const types = {
+  CLEAR_CART,
   SET_CART,
   SET_CARDS,
   SET_FAVORITE,

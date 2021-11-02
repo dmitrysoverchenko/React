@@ -1,5 +1,6 @@
 import React from "react";
 import { useField } from "formik";
+import "./CheckoutField.scss";
 
 const CheckoutField = ({ name, label, ...rest }) => {
   const [field, fieldState] = useField(name);
@@ -8,11 +9,7 @@ const CheckoutField = ({ name, label, ...rest }) => {
     <div className="field-wrapper">
       <label className={"field-label"}>
         {label}
-        <input
-          {...field}
-          {...rest}
-          className={fieldState.error && fieldState.touched && "invalid"}
-        />
+        <input {...field} {...rest} className={"field-input"} />
         {fieldState.error && fieldState.touched && (
           <span className={"error-text"}>{fieldState.error}</span>
         )}

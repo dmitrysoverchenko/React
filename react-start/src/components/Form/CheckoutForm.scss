@@ -1,5 +1,6 @@
-.form-wrapper {
-  max-width: 500px;
-  flex: 0 0 50%;
-  margin: 1rem 0;
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
