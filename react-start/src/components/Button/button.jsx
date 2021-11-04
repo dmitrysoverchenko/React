@@ -1,22 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Button.scss";
+import PropTypes from "prop-types";
+import actions from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
-class Button extends Component {
-  render() {
-    
-    const { text, backgroundColor, clickHandler, dataId } = this.props;
+const Button = ({ text, backgroundColor, confirm }) => {
+  const dispatch = useDispatch();
 
-    return (
-      <button
-        style={{ backgroundColor }}
-        onClick={(e) => clickHandler(e)}
-        className={"button"}
-        data-id={dataId}
-      >
-        {text}
-      </button>
-    );
-  }
-}
+  return (
+    <button
+      style={{ backgroundColor }}
+      onClick={() => dispatch(actions.closeModal(confirm))}
+      className={"button"}
+      data-testid="buttonTest"
+    >
+      {text}
+    </button>
+  );
+};
+
+Button.propTypes = {
+  text: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  clickHandler: PropTypes.func,
+  cancel: PropTypes.bool,
+};
+
+Button.defaultProp = {
+  cancel: false,
+};
 
 export default Button;

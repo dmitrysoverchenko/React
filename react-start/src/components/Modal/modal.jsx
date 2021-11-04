@@ -1,36 +1,45 @@
-import React, { Component } from "react";
-import "./modal.scss";
+import React from "react";
+import "./Modal.scss";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import actions from "../../redux/actions";
+import Button from "../Button/Button";
 
-class Modal extends Component {
-  render() {
-    const { header, text, actions, closeButton, closeModal, dataId } =
-      this.props;
-
-    return (
+const Modal = ({ header }) => {
+  const dispatch = useDispatch();
+  return (
+    <div
+      className="substrate"
+      onClick={() => dispatch(actions.setCartFromLocalStorage())}
+    >
       <div
-        className={"substrate"}
-        data-id={dataId}
-        onClick={(e) => closeModal(e)}
+        className="wrapper"
+        data-testid="modal-wrapper"
+        onClick={(e) => e.preventDefault()}
       >
-        <div className={"wrapper"} onClick={(e) => e.preventDefault()}>
-          <header className={"header"}>
-            <h2 className={"title"}>{header}</h2>
-            {closeButton && (
-              <button
-                className={"close-button"}
-                data-id={dataId}
-                onClick={(e) => closeModal(e)}
-              >
-                X
-              </button>
-            )}
-          </header>
-          <p className={"text"}>{text}</p>
-          <div className={"action-wrapper"}>{actions}</div>
+        <header className="header">
+          <h2 className="title">{header}</h2>
+          <button
+            className="close-button"
+            onClick={() => dispatch(actions.setCartFromLocalStorage())}
+          >
+            X
+          </button>
+        </header>
+        <div className="action-wrapper">
+          <Button backgroundColor="#2a88e0" text={"Ok"} confirm={true} />
+          <Button backgroundColor="#2a88e0" text={"Cancel"} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+Modal.propTypes = {
+  header: PropTypes.string,
+  modalHandler: PropTypes.func,
+  cancel: PropTypes.bool,
+  actions: PropTypes.element,
+};
 
 export default Modal;

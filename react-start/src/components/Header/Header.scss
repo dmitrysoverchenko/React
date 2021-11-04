@@ -1,0 +1,26 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: black;
+    &:visited {
+        color: black;
+    }
+}
+
+.navbar__item {
+    padding-right: 25px;
+}
+
+.logo {
+    padding-left: 25px;
+}
