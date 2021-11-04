@@ -12,6 +12,7 @@ const Button = ({ text, backgroundColor, confirm }) => {
       style={{ backgroundColor }}
       onClick={() => dispatch(actions.closeModal(confirm))}
       className={"button"}
+      data-testid="buttonTest"
     >
       {text}
     </button>

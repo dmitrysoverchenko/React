@@ -15,7 +15,7 @@ describe("<Modal/>", () => {
     );
   });
 
-  it("should contains class modal-wrapper", () => {
+  it("should contains class wrapper", () => {
     const store = mockStore({});
     render(
       <Provider store={store}>
