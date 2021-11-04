@@ -12,7 +12,11 @@ const Modal = ({ header }) => {
       className="substrate"
       onClick={() => dispatch(actions.setCartFromLocalStorage())}
     >
-      <div className="wrapper" onClick={(e) => e.preventDefault()}>
+      <div
+        className="wrapper"
+        data-testid="modal-wrapper"
+        onClick={(e) => e.preventDefault()}
+      >
         <header className="header">
           <h2 className="title">{header}</h2>
           <button
