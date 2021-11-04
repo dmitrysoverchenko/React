@@ -17,16 +17,15 @@ describe("<Button/>", () => {
     getByRole("button");
   });
 
-//   it("should be clicked", () => {
-//     const handleClick = jest.fn();
-//     const store = mockStore({});
-//     render(
-//       <Provider store={store}>
-//         <Button type="button" onClick={handleClick} />
-//       </Provider>
-//     );
-//     const element = screen.getByRole("button");
-//     fireEvent.click(element);
-//     expect(handleClick).toHaveBeenCalled();
-//   });
+  it("should made snapshot", () => {
+    const store = mockStore({});
+    const { getByRole } = render(
+      <Provider store={store}>
+        <Button />
+      </Provider>
+    );
+    getByRole("button");
+    const element = getByRole("button");
+    expect(element).toMatchSnapshot();
+  });
 });
