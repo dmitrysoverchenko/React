@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Кроссовки AIR JORDAN 1 LOW SE",
+    "price": "4999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/b04/DM3528_100_a.jpg",
+    "color": "white",
+    "id": "3528"
+  },
+  {
+    "name": "Кроссовки AIR JORDAN 1 RETRO HIGH OG",
+    "price": "7999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/7c9/DC6515_100_a.jpg",
+    "color": "brown",
+    "id": "6579"
+  },
+  {
+    "name": "Кроссовки NIKE AIR MAX 97",
+    "price": "3999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/1f2/DJ0717_001_a.jpg",
+    "color": "grey",
+    "id": "0717"
+  },
+  {
+    "name": "Кроссовки NIKE KYRIE 7",
+    "price": "6899",
+    "imgUrl": "https://deltasport.ua/upload/iblock/828/CQ9326_402_a.jpg",
+    "color": "green",
+    "id": "9326"
+  },
+  {
+    "name": "Кроссовки Helly Hansen LUMINEER VIZ-LITE",
+    "price": "6999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/ffe/11739_990_a.jpg",
+    "color": "black",
+    "id": "11739"
+  },
+  {
+    "name": "Кроссовки NIKE AF1/1",
+    "price": "5999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/fde/DD2429_001_a.jpg",
+    "color": "black",
+    "id": "2429"
+  },
+  {
+    "name": "Кроссовки JORDAN MAX AURA 3",
+    "price": "4999",
+    "imgUrl": "https://deltasport.ua/upload/iblock/62b/CZ4167_600_a.jpg",
+    "color": "red",
+    "id": "4167"
+  },
+  {
+    "name": "Кроссовки JORDAN FLTCLB 91",
+    "price": "6049",
+    "imgUrl": "https://deltasport.ua/upload/iblock/1ab/DH5424_100_a.jpg",
+    "color": "white",
+    "id": "5424"
+  },
+  {
+    "name": "Кроссовки JORDAN WHY NOT ZER0.4",
+    "price": "5749",
+    "imgUrl": "https://deltasport.ua/upload/iblock/b01/DD4887_400_a.jpg",
+    "color": "blue",
+    "id": "4887"
+  },
+  {
+    "name": "Кроссовки NIKE ZOOM FREAK 3",
+    "price": "5199",
+    "imgUrl": "https://deltasport.ua/upload/iblock/55a/DA0694_600_a.jpg",
+    "color": "pink",
+    "id": "0694"
+  }
+]
